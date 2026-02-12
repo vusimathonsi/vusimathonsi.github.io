@@ -1,11 +1,19 @@
+@font-face {
+	font-family: Inter;
+	src: url(../assets/fonts/inter/inter-variablefont_opsz_wght.ttf);
+}
+
+@font-face {
+	font-family: Open_Sans;
+	src: url(../assets/fonts/open_sans/openSans-VariableFont_wdth_wght.ttf);
+}
+
 :root {
-	--body-font: "Open Sans";
-	--heading-font: Inter;
 	--fallback-font: system-ui, sans-serif;
 }
 
 html {
-	font-family: var(--body-font);
+	font-family: Open_Sans var(--fallback-font);
 	font-size: 16px;
 	line-height: 1.5;
 }
@@ -17,7 +25,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--heading-font);
+	font-family: Inter var(--fallback-font);
 	padding: 0;
 	margin: 0;
 }
@@ -67,7 +75,7 @@ h6 {
 p {
 	padding: 0;
 	margin: 0;
-	font-family: var(--body-font);
+	font-family: Open_Sans;
 	font-size: clamp(1rem, 1.5vw, 1.25rem);
 	margin-bottom: 1rem;
 	word-wrap: break-word;
