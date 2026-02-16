@@ -1,15 +1,369 @@
+/*
+========================================
+SPACING SYSTEM
+Professional 4-point spacing scale
+Optimized for readability, hierarchy, and layout clarity
+========================================
+*/
+
 :root {
+	/*
+	========================================
+	BASE SPACING SCALE (4-point system)
+	========================================
+	*/
 	--space-0: 0;
-	--space-1: 0.25rem;
-	--space-2: 0.5rem;
-	--space-3: 0.75rem;
-	--space-4: 1rem;
-	--space-5: 1.25rem;
-	--space-6: 1.5rem;
-	--space-7: 2rem;
-	--space-8: 2.5rem;
-	--space-9: 3rem;
-	--space-10: 4rem;
-	--space-11: 5rem;
-	--space-12: 6rem;
+	--space-1: 0.25rem; /* 4px */
+	--space-2: 0.5rem; /* 8px */
+	--space-3: 0.75rem; /* 12px */
+	--space-4: 1rem; /* 16px */
+	--space-5: 1.25rem; /* 20px */
+	--space-6: 1.5rem; /* 24px */
+	--space-7: 2rem; /* 32px */
+	--space-8: 2.5rem; /* 40px */
+	--space-9: 3rem; /* 48px */
+	--space-10: 4rem; /* 64px */
+	--space-11: 5rem; /* 80px */
+	--space-12: 6rem; /* 96px */
+
+	/*
+	========================================
+	CONTENT WIDTHS
+	========================================
+	*/
+	--content-xs: 480px;
+	--content-sm: 640px;
+	--content-md: 720px;
+	--content-lg: 960px;
+	--content-xl: 1140px;
+	--content-xxl: 1320px;
+
+	/*
+	========================================
+	SECTION SPACING
+	========================================
+	*/
+	--section-padding-y: var(--space-10);
+	--section-padding-y-sm: var(--space-8);
+
+	/*
+	========================================
+	CONTAINER PADDING
+	========================================
+	*/
+	--container-padding-x: var(--space-4);
+	--container-padding-x-lg: var(--space-6);
+}
+
+/*
+========================================
+GLOBAL ELEMENT SPACING
+========================================
+*/
+
+body > * + * {
+	margin-top: var(--space-4);
+}
+
+/*
+========================================
+SECTION SPACING
+========================================
+*/
+
+section {
+	padding-top: var(--section-padding-y-sm);
+	padding-bottom: var(--section-padding-y-sm);
+}
+
+@media (min-width: 992px) {
+	section {
+		padding-top: var(--section-padding-y);
+		padding-bottom: var(--section-padding-y);
+	}
+}
+
+/*
+========================================
+CONTAINER SYSTEM
+========================================
+*/
+
+.container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: var(--container-padding-x);
+	padding-right: var(--container-padding-x);
+	max-width: var(--content-lg);
+}
+
+.container-sm {
+	max-width: var(--content-sm);
+}
+
+.container-md {
+	max-width: var(--content-md);
+}
+
+.container-lg {
+	max-width: var(--content-lg);
+}
+
+.container-xl {
+	max-width: var(--content-xl);
+}
+
+.container-xxl {
+	max-width: var(--content-xxl);
+}
+
+@media (min-width: 992px) {
+	.container {
+		padding-left: var(--container-padding-x-lg);
+		padding-right: var(--container-padding-x-lg);
+	}
+}
+
+/*
+========================================
+VERTICAL FLOW SYSTEM
+Creates consistent vertical rhythm
+========================================
+*/
+
+.flow > * + * {
+	margin-top: var(--flow-space, var(--space-4));
+}
+
+.flow-sm {
+	--flow-space: var(--space-3);
+}
+
+.flow-md {
+	--flow-space: var(--space-4);
+}
+
+.flow-lg {
+	--flow-space: var(--space-6);
+}
+
+.flow-xl {
+	--flow-space: var(--space-8);
+}
+
+/*
+========================================
+STACK SYSTEM
+For grouping related elements
+========================================
+*/
+
+.stack > * + * {
+	margin-top: var(--stack-space, var(--space-4));
+}
+
+.stack-xs {
+	--stack-space: var(--space-2);
+}
+
+.stack-sm {
+	--stack-space: var(--space-3);
+}
+
+.stack-md {
+	--stack-space: var(--space-4);
+}
+
+.stack-lg {
+	--stack-space: var(--space-6);
+}
+
+.stack-xl {
+	--stack-space: var(--space-8);
+}
+
+/*
+========================================
+CLUSTER SYSTEM
+Horizontal layouts with spacing
+========================================
+*/
+
+.cluster {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--cluster-space, var(--space-3));
+	align-items: center;
+}
+
+.cluster-sm {
+	--cluster-space: var(--space-2);
+}
+
+.cluster-md {
+	--cluster-space: var(--space-3);
+}
+
+.cluster-lg {
+	--cluster-space: var(--space-4);
+}
+
+.cluster-xl {
+	--cluster-space: var(--space-6);
+}
+
+/*
+========================================
+UTILITY MARGINS
+========================================
+*/
+
+.mt-0 {
+	margin-top: var(--space-0);
+}
+.mt-1 {
+	margin-top: var(--space-1);
+}
+.mt-2 {
+	margin-top: var(--space-2);
+}
+.mt-3 {
+	margin-top: var(--space-3);
+}
+.mt-4 {
+	margin-top: var(--space-4);
+}
+.mt-5 {
+	margin-top: var(--space-5);
+}
+.mt-6 {
+	margin-top: var(--space-6);
+}
+.mt-7 {
+	margin-top: var(--space-7);
+}
+.mt-8 {
+	margin-top: var(--space-8);
+}
+
+.mb-0 {
+	margin-bottom: var(--space-0);
+}
+.mb-1 {
+	margin-bottom: var(--space-1);
+}
+.mb-2 {
+	margin-bottom: var(--space-2);
+}
+.mb-3 {
+	margin-bottom: var(--space-3);
+}
+.mb-4 {
+	margin-bottom: var(--space-4);
+}
+.mb-5 {
+	margin-bottom: var(--space-5);
+}
+.mb-6 {
+	margin-bottom: var(--space-6);
+}
+.mb-7 {
+	margin-bottom: var(--space-7);
+}
+.mb-8 {
+	margin-bottom: var(--space-8);
+}
+
+/*
+========================================
+UTILITY PADDING
+========================================
+*/
+
+.pt-0 {
+	padding-top: var(--space-0);
+}
+.pt-1 {
+	padding-top: var(--space-1);
+}
+.pt-2 {
+	padding-top: var(--space-2);
+}
+.pt-3 {
+	padding-top: var(--space-3);
+}
+.pt-4 {
+	padding-top: var(--space-4);
+}
+.pt-5 {
+	padding-top: var(--space-5);
+}
+.pt-6 {
+	padding-top: var(--space-6);
+}
+.pt-7 {
+	padding-top: var(--space-7);
+}
+.pt-8 {
+	padding-top: var(--space-8);
+}
+
+.pb-0 {
+	padding-bottom: var(--space-0);
+}
+.pb-1 {
+	padding-bottom: var(--space-1);
+}
+.pb-2 {
+	padding-bottom: var(--space-2);
+}
+.pb-3 {
+	padding-bottom: var(--space-3);
+}
+.pb-4 {
+	padding-bottom: var(--space-4);
+}
+.pb-5 {
+	padding-bottom: var(--space-5);
+}
+.pb-6 {
+	padding-bottom: var(--space-6);
+}
+.pb-7 {
+	padding-bottom: var(--space-7);
+}
+.pb-8 {
+	padding-bottom: var(--space-8);
+}
+
+/*
+========================================
+CENTERING UTILITIES
+========================================
+*/
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center-text {
+	text-align: center;
+}
+
+/*
+========================================
+FULL WIDTH SECTION SUPPORT
+========================================
+*/
+
+.full-width {
+	width: 100%;
+}
+
+.content-width {
+	max-width: var(--content-md);
+	margin-left: auto;
+	margin-right: auto;
 }
