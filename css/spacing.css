@@ -100,22 +100,37 @@ CONTAINER SYSTEM
 
 .container-sm {
 	max-width: var(--content-sm);
+	margin: auto;
+	padding-left: var(--container-padding-x);
+	padding-right: var(--container-padding-x);
 }
 
 .container-md {
 	max-width: var(--content-md);
+	margin: auto;
+	padding-left: var(--container-padding-x);
+	padding-right: var(--container-padding-x);
 }
 
 .container-lg {
 	max-width: var(--content-lg);
+	margin: auto;
+	padding-left: var(--container-padding-x);
+	padding-right: var(--container-padding-x);
 }
 
 .container-xl {
 	max-width: var(--content-xl);
+	margin: auto;
+	padding-left: var(--container-padding-x);
+	padding-right: var(--container-padding-x);
 }
 
 .container-xxl {
 	max-width: var(--content-xxl);
+	margin: auto;
+	padding-left: var(--container-padding-x);
+	padding-right: var(--container-padding-x);
 }
 
 @media (min-width: 992px) {
