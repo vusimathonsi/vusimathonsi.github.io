@@ -23,7 +23,7 @@ header,
 	gap: var(--space-10);
 }
 header {
-	min-height: calc(100vh - 200px);
+	min-height: calc(100vh - 180px);
 	height: auto;
 }
 header div:nth-last-of-type(2) {
@@ -45,8 +45,17 @@ img {
 	height: auto;
 	margin: auto;
 }
+figure {
+	margin: 0;
+}
 figcaption {
 	margin-top: var(--space-3);
+}
+#my-approach svg {
+	width: 48px;
+	height: 48px;
+	stroke-width: 1.5;
+	stroke-linecap: round;
 }
 
 /* Small devices (landscape phones, 576px and up) */
