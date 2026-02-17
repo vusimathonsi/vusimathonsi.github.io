@@ -16,18 +16,37 @@ nav {
 	height: 56px;
 	background-color: gainsboro;
 }
-header {
+header,
+#about-me {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-10);
 }
+header {
+	min-height: calc(100vh - 200px);
+	height: auto;
+}
 header div:nth-last-of-type(2) {
 	order: 1;
 }
+main {
+	height: 100%;
+}
+#about-me {
+	align-items: center;
+}
+#about-me div > img {
+	max-width: var(--content-lg);
+}
 img {
+	display: block;
 	width: 100%;
 	max-width: 800px;
+	height: auto;
 	margin: auto;
+}
+figcaption {
+	margin-top: var(--space-3);
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -47,6 +66,10 @@ img {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+	#about-me {
+		flex-direction: row;
+		align-items: flex-start;
+	}
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
