@@ -26,8 +26,15 @@ header {
 	min-height: calc(100vh - 180px);
 	height: auto;
 }
+.page-header {
+	min-height: calc(100vh - 300px);
+}
 header div:nth-last-of-type(2) {
 	order: 1;
+}
+.container.page-header {
+	justify-content: center;
+	text-align: center;
 }
 main {
 	height: 100%;
@@ -107,6 +114,7 @@ footer ul {
 	position: sticky;
 	top: 0;
 	left: 0;
+	z-index: 2;
 }
 .navbar > div {
 	height: 56px;
@@ -146,12 +154,10 @@ footer ul {
 	background-color: black;
 	border-radius: 1rem;
 }
-
 .no-scroll {
 	overflow: hidden;
 	height: 100%;
 }
-
 /* --- 6. MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
 	.hamburger {
