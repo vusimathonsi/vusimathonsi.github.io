@@ -166,6 +166,7 @@ em {
 }
 
 .card-title {
+	margin-top: var(--space-5);
 	margin-bottom: 0;
 }
 
