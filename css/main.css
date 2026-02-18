@@ -57,6 +57,49 @@ figcaption {
 	stroke-width: 1.5;
 	stroke-linecap: round;
 }
+#my-approach > div {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-10);
+	padding-top: var(--space-10);
+}
+.card {
+	width: 100%;
+	padding: var(--space-7);
+	border-width: 0.0625rem;
+	border-style: solid;
+	border-radius: 0.5rem;
+}
+#connect div:last-child {
+	display: none;
+}
+footer > div {
+	text-align: center;
+}
+
+footer > div div p {
+	margin: auto;
+}
+footer ul {
+	list-style: none;
+}
+footer > div div {
+	margin-bottom: var(--space-9);
+}
+footer > div div:last-of-type div {
+	margin-bottom: var(--space-5);
+}
+footer h4 {
+	margin: var(--space-1);
+}
+footer p {
+	margin: 0;
+}
+footer > #copy {
+	display: block;
+	text-align: center;
+	padding: var(--space-5);
+}
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -71,6 +114,14 @@ figcaption {
 	header div:nth-last-of-type(1) {
 		order: 1;
 	}
+	#connect {
+		display: flex;
+		flex-direction: row;
+		gap: var(--space-10);
+	}
+	#connect div:last-child {
+		display: block;
+	}
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -78,6 +129,19 @@ figcaption {
 	#about-me {
 		flex-direction: row;
 		align-items: flex-start;
+	}
+	#my-approach > div {
+		flex-direction: row;
+		justify-content: space-between;
+		gap: var(--space-5);
+	}
+	.card {
+		max-width: 20rem;
+	}
+	footer > div {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--space-10);
 	}
 }
 
