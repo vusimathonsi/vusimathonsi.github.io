@@ -37,6 +37,7 @@ Optimized for readability, hierarchy, and layout clarity
 	--content-lg: 960px;
 	--content-xl: 1140px;
 	--content-xxl: 1320px;
+	--content-3xl: 1400px;
 
 	/*
 	========================================
@@ -131,6 +132,13 @@ CONTAINER SYSTEM
 
 .container-xxl {
 	max-width: var(--content-xxl);
+	margin: auto;
+	padding-left: var(--container-padding-x);
+	padding-right: var(--container-padding-x);
+}
+
+.container-3xl {
+	max-width: var(--content-3xl);
 	margin: auto;
 	padding-left: var(--container-padding-x);
 	padding-right: var(--container-padding-x);
