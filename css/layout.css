@@ -1,0 +1,102 @@
+body {
+	position: relative;
+}
+.navbar {
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.nav-menu,
+.navbar > div,
+header,
+#about-me,
+#my-approach > div {
+	display: flex;
+}
+header,
+#about-me,
+#my-approach > div {
+	flex-direction: column;
+	gap: var(--space-10);
+}
+.navbar > div {
+	justify-content: space-between;
+}
+header div:nth-last-of-type(2) {
+	order: 1;
+}
+.container.page-header {
+	justify-content: center;
+	text-align: center;
+}
+.navbar > div,
+#about-me {
+	align-items: center;
+}
+.bar,
+.nav-link,
+img,
+footer > #copy {
+	display: block;
+}
+.hamburger,
+#connect div:last-child {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.hamburger {
+		display: block;
+	}
+	.nav-menu {
+		position: fixed;
+		left: -100%;
+		top: 56px;
+		flex-direction: column;
+	}
+}
+
+@media (min-width: 768px) {
+	header {
+		flex-direction: row;
+		align-items: center;
+	}
+	header div:nth-last-of-type(1) {
+		order: 1;
+	}
+	#connect {
+		display: flex;
+		flex-direction: row;
+		gap: var(--space-10);
+	}
+	#connect div:last-child {
+		display: block;
+	}
+	footer > div {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--space-10);
+	}
+}
+
+@media (min-width: 992px) {
+	#about-me,
+	#my-approach > div {
+		flex-direction: row;
+	}
+	#about-me {
+		align-items: flex-start;
+	}
+	#my-approach > div,
+	footer > div {
+		justify-content: space-between;
+	}
+	#my-approach > div {
+		gap: var(--space-5);
+	}
+	footer > div {
+		display: flex;
+		gap: var(--space-10);
+	}
+}
