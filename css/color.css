@@ -10,7 +10,7 @@ nav {
 	background-color: inherit;
 }
 .nav-menu {
-	background-color: inherit;
+	background-color: var(--bg-color);
 }
 .bar {
 	background-color: var(--text-color);
