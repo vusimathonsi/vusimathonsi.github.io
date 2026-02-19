@@ -5,6 +5,181 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/main.css" />
 		<title>Vusi Mathonsi | Experience</title>
+		<style>
+			:root {
+				--dot-color: #fbbf24;
+				--warm-glow: rgba(251, 191, 36, 0.6);
+			}
+			.timeline {
+				position: relative;
+				margin: 0 auto;
+				padding: 20px 0;
+			}
+
+			.timeline h4 + p {
+				margin-top: 0;
+			}
+
+			/* The Central Vertical Line */
+			.timeline::after {
+				content: "";
+				position: absolute;
+				width: 4px;
+				background-color: lightgray;
+				top: 0;
+				bottom: 0;
+				left: 50%;
+				margin-left: -2px;
+			}
+
+			/* Container for each item (Invisible wrapper) */
+			.timeline-item {
+				padding: 10px 50px;
+				position: relative;
+				background-color: inherit;
+				width: 50%;
+			}
+
+			/* Positioning */
+			.left {
+				left: 0;
+			}
+			.right {
+				left: 50%;
+			}
+
+			/* The Dot on the Line */
+			.timeline-item::after {
+				content: "";
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				right: -10px; /* Position for Left items */
+				background-color: white;
+				border: 4px solid lightgray;
+				top: 24px;
+				border-radius: 50%;
+				z-index: 1;
+				transition: all 0.3s ease;
+				/* box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5); White ring effect */
+			}
+
+			/* Fix Dot for Right Items */
+			.right::after {
+				left: -10px;
+			}
+
+			/* Only the active dot gets the highlight */
+			.timeline-item.active::after {
+				background-color: var(--dot-color);
+				border-color: var(--dot-color);
+				transform: scale(1.3); /* slightly larger to pop */
+				box-shadow: 0 0 12px var(--warm-glow);
+			}
+
+			.timeline-item.active .content {
+				border-top-color: var(--dot-color);
+				transform: translateY(-5px);
+				box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+			}
+
+			.content {
+				padding: 30px;
+				background-color: #ffffff;
+				position: relative;
+				border-radius: 8px;
+				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+				transition: transform 0.3s ease;
+			}
+
+			/* The "Arrow" pointing to the center line */
+			.content::before {
+				content: " ";
+				height: 0;
+				position: absolute;
+				top: 22px;
+				width: 0;
+				z-index: 1;
+				border: medium solid white;
+			}
+
+			/* Arrow for Left Items (Points Right) */
+			.left .content::before {
+				right: -10px;
+				border-width: 10px 0 10px 10px;
+				border-color: transparent transparent transparent #ffffff;
+			}
+
+			/* Arrow for Right Items (Points Left) */
+			.right .content::before {
+				left: -10px;
+				border-width: 10px 10px 10px 0;
+				border-color: transparent #ffffff transparent transparent;
+			}
+
+			.content .date {
+				display: inline-block;
+				padding: 5px 15px;
+				border-radius: 50px;
+				font-size: 0.8rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				/* border: 1px solid #fcd34d; */
+			}
+			.certification h2 {
+				text-align: center;
+			}
+			.certification h2 + div {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: var(--space-5);
+				padding-top: 2rem;
+			}
+
+			.certification h2 + div img {
+				width: 100%;
+				max-width: 180px;
+			}
+
+			@media screen and (max-width: 768px) {
+				.certification h2 + div img {
+					max-width: 120px;
+				}
+				/* Line moves to the left */
+				.timeline::after {
+					left: 31px;
+				}
+
+				/* Items become full width */
+				.timeline-item {
+					width: 100%;
+					padding-left: 70px; /* Space for the line/dots */
+					padding-right: 15px;
+				}
+
+				/* Reset positioning */
+				.left,
+				.right {
+					left: 0;
+				}
+
+				/* Fix Dot Alignment */
+				.timeline-item::after {
+					left: 21px; /* Center on the new line position */
+				}
+
+				/* All Arrows Point Left */
+				.left .content::before,
+				.right .content::before {
+					left: -10px;
+					right: auto;
+					border-width: 10px 10px 10px 0;
+					border-color: transparent #ffffff transparent transparent;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<nav class="navbar">
@@ -40,14 +215,87 @@
 			<div>
 				<h1>Professional Journey</h1>
 				<p>
-					Over nine years dedicated to the whole student - cultivating
+					Over a decade dedicated to the whole student - cultivating
 					academic excellence in the classroom and character in the
 					boarding house.
 				</p>
 				<a href="" target="_blank">Download Full CV</a>
 			</div>
 		</header>
-		<main></main>
+		<main>
+			<section class="timeline container-xxl">
+				<div class="timeline-item right">
+					<div class="content">
+						<span class="date">Sept 2019 - Present</span>
+						<h2>Boarding Housemaster</h2>
+						<h4>St John's College</h4>
+						<p>
+							I balance the logistical demands of a large boarding
+							house with the relational work of raising young men,
+							creating a "home away from home" where character is
+							built alongside academic success.
+						</p>
+					</div>
+				</div>
+
+				<div class="timeline-item left">
+					<div class="content">
+						<span class="date">Jan 2017 - Present</span>
+						<h2>Mathematics Educator</h2>
+						<h4>St John's College</h4>
+						<p>
+							I deliver high-performance mathematics education,
+							using data to identify gaps in understanding, and
+							then bridging those gaps with targeted and
+							supportive teaching.
+						</p>
+					</div>
+				</div>
+
+				<div class="timeline-item right">
+					<div class="content">
+						<span class="date">Jan 2016 - Dec 2016</span>
+						<h2>Maths, Science & Tech Teacher</h2>
+						<h4>Boitumelong Secondary School</h4>
+						<p>
+							In this high-pressure environment, I learned that
+							academic success begins with emotional support. I
+							focused on building resilience and confidence in
+							students facing significant personal challenges.
+						</p>
+					</div>
+				</div>
+
+				<div class="timeline-item left">
+					<div class="content">
+						<span class="date">Education</span>
+						<h2>Bachelor of Education</h2>
+						<h4>University of Johannesburg</h4>
+						<p>Graduated 2015</p>
+					</div>
+				</div>
+			</section>
+			<section class="certification container-xxl">
+				<div>
+					<h2>Certification</h2>
+					<div>
+						<img
+							src="assets/images/google_level_2.png"
+							alt="Google For Education Certified Educator Level 2"
+						/>
+						<img
+							src="assets/images/world_rugby.jpg"
+							alt="World Rugby logo"
+							id="world-rugby"
+						/>
+						<img
+							src="assets/images/boksmart.png"
+							alt="BokSmart logo"
+						/>
+					</div>
+				</div>
+			</section>
+		</main>
 		<footer>
 			<div class="container-xxl">
 				<div>
@@ -79,6 +327,53 @@
 				Vusi Mathonsi. All Rights Reserved
 			</small>
 		</footer>
+		<script>
+			const timelineItems = document.querySelectorAll(".timeline-item");
+
+			function updateActiveTimelineItem() {
+				// 1. Define the horizontal line (the exact middle of the screen)
+				const viewportCenter = window.innerHeight / 2;
+
+				let closestItem = null;
+				let minDistance = Infinity;
+
+				// 2. Loop through each item to find which one is closest to the center
+				timelineItems.forEach((item) => {
+					const rect = item.getBoundingClientRect();
+
+					// The dot is placed 24px from the top of the item and is 20px tall.
+					// So, the exact center of the dot is rect.top + 34px.
+					const dotCenterTarget = rect.top + 34;
+
+					// Calculate the absolute distance from the dot to the middle of the screen
+					const distance = Math.abs(viewportCenter - dotCenterTarget);
+
+					if (distance < minDistance) {
+						minDistance = distance;
+						closestItem = item;
+					}
+				});
+
+				// 3. Remove 'active' class from ALL items
+				timelineItems.forEach((item) => {
+					item.classList.remove("active");
+				});
+
+				// 4. Add 'active' class ONLY to the closest item
+				if (closestItem) {
+					closestItem.classList.add("active");
+				}
+			}
+
+			// Run the function every time the user scrolls
+			window.addEventListener("scroll", updateActiveTimelineItem);
+
+			// Run it once when the page loads so the first item lights up immediately
+			window.addEventListener("load", updateActiveTimelineItem);
+
+			// Recalculate if the user resizes their window
+			window.addEventListener("resize", updateActiveTimelineItem);
+		</script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
