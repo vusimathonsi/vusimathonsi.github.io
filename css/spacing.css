@@ -65,7 +65,54 @@ GLOBAL ELEMENT SPACING
 body > * + * {
 	margin-top: var(--space-4);
 }
-
+body,
+figure,
+.nav-menu,
+.nav-item,
+footer p {
+	margin: var(--space-0);
+}
+body {
+	padding: var(--space-0);
+}
+.navbar > div {
+	margin: var(--space-0) auto;
+}
+.nav-menu,
+footer ul {
+	padding-left: var(--space-0);
+}
+.bar {
+	margin: 6px auto;
+}
+img,
+footer > div div p {
+	margin: auto;
+}
+figcaption {
+	margin-top: var(--space-3);
+}
+#my-approach > div {
+	padding-top: var(--space-10);
+}
+footer > div div {
+	margin-bottom: var(--space-9);
+}
+footer > div div:last-of-type div {
+	margin-bottom: var(--space-5);
+}
+footer h4 {
+	margin: var(--space-1);
+}
+footer > #copy {
+	padding: var(--space-5);
+}
+.nav-link {
+	padding: var(--space-4);
+}
+.card {
+	padding: var(--space-7);
+}
 /*
 ========================================
 SECTION SPACING
