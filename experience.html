@@ -9,37 +9,40 @@
 			:root {
 				--dot-color: #fbbf24;
 				--warm-glow: rgba(251, 191, 36, 0.6);
+				--central-line-color: lightgray;
+			}
+			.timeline,
+			.timeline-item,
+			.content {
+				position: relative;
 			}
 			.timeline {
-				position: relative;
-				margin: 0 auto;
+				margin: var(--space-0) auto;
 				padding: 20px 0;
 			}
-
 			.timeline h4 + p {
-				margin-top: 0;
+				margin-top: var(--space-0);
 			}
-
+			.timeline::after,
+			.timeline-item::after {
+				position: absolute;
+				content: "";
+			}
 			/* The Central Vertical Line */
 			.timeline::after {
-				content: "";
-				position: absolute;
 				width: 4px;
-				background-color: lightgray;
+				background-color: var(--central-line-color);
 				top: 0;
 				bottom: 0;
 				left: 50%;
 				margin-left: -2px;
 			}
-
 			/* Container for each item (Invisible wrapper) */
 			.timeline-item {
 				padding: 10px 50px;
-				position: relative;
 				background-color: inherit;
 				width: 50%;
 			}
-
 			/* Positioning */
 			.left {
 				left: 0;
@@ -47,28 +50,22 @@
 			.right {
 				left: 50%;
 			}
-
 			/* The Dot on the Line */
 			.timeline-item::after {
-				content: "";
-				position: absolute;
 				width: 20px;
 				height: 20px;
 				right: -10px; /* Position for Left items */
-				background-color: white;
-				border: 4px solid lightgray;
+				background-color: var(--bg-color);
+				border: 4px solid var(--central-line-color);
 				top: 24px;
 				border-radius: 50%;
 				z-index: 1;
 				transition: all 0.3s ease;
-				/* box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5); White ring effect */
 			}
-
 			/* Fix Dot for Right Items */
 			.right::after {
 				left: -10px;
 			}
-
 			/* Only the active dot gets the highlight */
 			.timeline-item.active::after {
 				background-color: var(--dot-color);
@@ -76,22 +73,18 @@
 				transform: scale(1.3); /* slightly larger to pop */
 				box-shadow: 0 0 12px var(--warm-glow);
 			}
-
 			.timeline-item.active .content {
 				border-top-color: var(--dot-color);
 				transform: translateY(-5px);
 				box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 			}
-
 			.content {
 				padding: 30px;
-				background-color: #ffffff;
-				position: relative;
+				background-color: var(--bg-color);
 				border-radius: 8px;
 				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 				transition: transform 0.3s ease;
 			}
-
 			/* The "Arrow" pointing to the center line */
 			.content::before {
 				content: " ";
@@ -100,23 +93,22 @@
 				top: 22px;
 				width: 0;
 				z-index: 1;
-				border: medium solid white;
+				border: medium solid var(--bg-color);
 			}
-
 			/* Arrow for Left Items (Points Right) */
 			.left .content::before {
 				right: -10px;
 				border-width: 10px 0 10px 10px;
-				border-color: transparent transparent transparent #ffffff;
+				border-color: transparent transparent transparent
+					var(--bg-color);
 			}
-
 			/* Arrow for Right Items (Points Left) */
 			.right .content::before {
 				left: -10px;
 				border-width: 10px 10px 10px 0;
-				border-color: transparent #ffffff transparent transparent;
+				border-color: transparent var(--bg-color) transparent
+					transparent;
 			}
-
 			.content .date {
 				display: inline-block;
 				padding: 5px 15px;
@@ -125,7 +117,7 @@
 				font-weight: 700;
 				text-transform: uppercase;
 				letter-spacing: 1px;
-				/* border: 1px solid #fcd34d; */
+				border: 1px solid var(--text-color);
 			}
 			.certification h2 {
 				text-align: center;
@@ -137,7 +129,6 @@
 				gap: var(--space-5);
 				padding-top: 2rem;
 			}
-
 			.certification h2 + div img {
 				width: 100%;
 				max-width: 180px;
@@ -151,32 +142,29 @@
 				.timeline::after {
 					left: 31px;
 				}
-
 				/* Items become full width */
 				.timeline-item {
 					width: 100%;
 					padding-left: 70px; /* Space for the line/dots */
 					padding-right: 15px;
 				}
-
 				/* Reset positioning */
 				.left,
 				.right {
 					left: 0;
 				}
-
 				/* Fix Dot Alignment */
 				.timeline-item::after {
 					left: 21px; /* Center on the new line position */
 				}
-
 				/* All Arrows Point Left */
 				.left .content::before,
 				.right .content::before {
 					left: -10px;
 					right: auto;
 					border-width: 10px 10px 10px 0;
-					border-color: transparent #ffffff transparent transparent;
+					border-color: transparent var(--bg-color) transparent
+						transparent;
 				}
 			}
 		</style>
