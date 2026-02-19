@@ -1,23 +1,15 @@
 @import url(typography.css);
 @import url(spacing.css);
 @import url(color.css);
+@import url(layout.css);
 
 *,
 *:before,
 *:after {
 	box-sizing: border-box;
 }
-body {
-	position: relative;
-}
 nav {
 	width: 100%;
-}
-header,
-#about-me {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-10);
 }
 header {
 	min-height: calc(100vh - 180px);
@@ -26,24 +18,13 @@ header {
 .page-header {
 	min-height: calc(100vh - 300px);
 }
-header div:nth-last-of-type(2) {
-	order: 1;
-}
-.container.page-header {
-	justify-content: center;
-	text-align: center;
-}
 main {
 	height: 100%;
-}
-#about-me {
-	align-items: center;
 }
 #about-me div > img {
 	max-width: var(--content-lg);
 }
 img {
-	display: block;
 	width: 100%;
 	max-width: 800px;
 	height: auto;
@@ -54,55 +35,29 @@ img {
 	stroke-width: 1.5;
 	stroke-linecap: round;
 }
-#my-approach > div {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-10);
-}
 .card {
 	width: 100%;
 	border-width: 0.0625rem;
 	border-style: solid;
 	border-radius: 0.5rem;
 }
-#connect div:last-child {
-	display: none;
-}
-footer > div {
+footer > div,
+footer > #copy {
 	text-align: center;
 }
 footer ul {
 	list-style: none;
 }
-footer > #copy {
-	display: block;
-	text-align: center;
-}
-.navbar {
-	position: sticky;
-	top: 0;
-	left: 0;
-	z-index: 2;
-}
 .navbar > div {
 	height: 56px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 }
 .nav-menu {
-	display: flex;
 	list-style: none;
 }
-.nav-link {
-	display: block;
-}
 .hamburger {
-	display: none;
 	cursor: pointer;
 }
 .bar {
-	display: block;
 	width: 32px;
 	height: 3px;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -114,9 +69,6 @@ footer > #copy {
 	height: 100%;
 }
 @media (max-width: 768px) {
-	.hamburger {
-		display: block;
-	}
 	.hamburger.active .bar:nth-child(2) {
 		opacity: 0;
 	}
@@ -127,10 +79,6 @@ footer > #copy {
 		transform: translateY(-9px) rotate(-45deg);
 	}
 	.nav-menu {
-		position: fixed;
-		left: -100%;
-		top: 56px;
-		flex-direction: column;
 		width: 100%;
 		height: 100vh;
 		transition: 0.3s;
@@ -144,48 +92,13 @@ footer > #copy {
 @media (min-width: 576px) {
 }
 
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-	header {
-		flex-direction: row;
-		align-items: center;
-	}
-	header div:nth-last-of-type(1) {
-		order: 1;
-	}
-	#connect {
-		display: flex;
-		flex-direction: row;
-		gap: var(--space-10);
-	}
-	#connect div:last-child {
-		display: block;
-	}
-	footer > div {
-		display: flex;
-		justify-content: space-between;
-		gap: var(--space-10);
-	}
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	#about-me {
-		flex-direction: row;
-		align-items: flex-start;
-	}
-	#my-approach > div {
-		flex-direction: row;
-		justify-content: space-between;
-		gap: var(--space-5);
-	}
 	.card {
 		max-width: 20rem;
-	}
-	footer > div {
-		display: flex;
-		justify-content: space-between;
-		gap: var(--space-10);
 	}
 }
 
