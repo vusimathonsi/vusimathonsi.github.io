@@ -29,7 +29,6 @@ header,
 	flex-direction: column;
 	gap: var(--space-10);
 }
-
 .navbar > div {
 	justify-content: space-between;
 }
@@ -53,6 +52,10 @@ footer > #copy {
 .hamburger,
 #connect div:last-child {
 	display: none;
+}
+#page-header {
+	justify-content: center;
+	text-align: center;
 }
 
 @media (max-width: 768px) {
