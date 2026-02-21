@@ -11,12 +11,14 @@ body {
 .navbar > div,
 header,
 #about-me,
-#my-approach > div {
+#my-approach > div,
+#goal {
 	display: flex;
 }
 header,
 #about-me,
-#my-approach > div {
+#my-approach > div,
+#goal {
 	flex-direction: column;
 	gap: var(--space-10);
 }
@@ -58,7 +60,8 @@ footer > #copy {
 }
 
 @media (min-width: 768px) {
-	header {
+	header,
+	#goal {
 		flex-direction: row;
 		align-items: center;
 	}
