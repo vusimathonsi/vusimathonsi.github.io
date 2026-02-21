@@ -8,6 +8,9 @@
 *:after {
 	box-sizing: border-box;
 }
+html {
+	scroll-behavior: smooth;
+}
 nav {
 	width: 100%;
 }
@@ -29,7 +32,7 @@ img {
 	max-width: 800px;
 	height: auto;
 }
-#my-approach svg {
+svg {
 	width: 48px;
 	height: 48px;
 	stroke-width: 1.5;
@@ -97,7 +100,7 @@ footer ul {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	.card {
+	.card:not(#pillars .card) {
 		max-width: 20rem;
 	}
 }
