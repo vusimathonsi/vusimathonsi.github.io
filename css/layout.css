@@ -15,6 +15,13 @@ header,
 #goal {
 	display: flex;
 }
+#pillars > div {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	gap: var(--space-10);
+	padding-top: var(--space-10);
+}
 header,
 #about-me,
 #my-approach > div,
@@ -22,6 +29,7 @@ header,
 	flex-direction: column;
 	gap: var(--space-10);
 }
+
 .navbar > div {
 	justify-content: space-between;
 }
@@ -81,6 +89,10 @@ footer > #copy {
 		justify-content: space-between;
 		gap: var(--space-10);
 	}
+	#pillars > div {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
 }
 
 @media (min-width: 992px) {
@@ -101,5 +113,14 @@ footer > #copy {
 	footer > div {
 		display: flex;
 		gap: var(--space-10);
+	}
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	#pillars > div {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		gap: var(--space-5);
 	}
 }
