@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/main.css" />
+		<title>Vusi Mathonsi | Resources</title>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container-xxl">
+				<a href="index.html" class="nav-brand">Vusi Mathonsi</a>
+				<ul class="nav-menu">
+					<li class="nav-item">
+						<a href="index.html" class="nav-link">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="philosophy.html" class="nav-link"
+							>Philosophy</a
+						>
+					</li>
+					<li class="nav-item">
+						<a href="experience.html" ="nav-link">Experience</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link">Resources</a>
+					</li>
+				</ul>
+
+				<div class="hamburger">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</div>
+			</div>
+		</nav>
+		<header id="page-header" class="container">
+			<div>
+				<h1>Resources & Tools</h1>
+				<p>
+					High standards require the right tools. Here is a collection
+					of the resources that I use to support my students and
+					streamline my daily workflow.
+				</p>
+			</div>
+		</header>
+		<main></main>
+		<footer>
+			<div class="container-xxl">
+				<div>
+					<h4>Vusi Mathonsi</h4>
+					<p>Mathematics Educator | Housemaster | Mentor</p>
+					<small><em>Empowering Minds. Shaping Character.</em></small>
+				</div>
+				<div>
+					<h4>Explore</h4>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="experience.html">Experience</a></li>
+						<li><a href="philosophy.html">Philosophy</a></li>
+						<li><a href="resources.html">Resources</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4>Connect</h4>
+					<div>Social media icons to go here...</div>
+					<h4>Resources</h4>
+					<a href="">Download Curriculum Vitae</a>
+				</div>
+			</div>
+			<small id="copy">
+				&copy;
+				<script>
+					document.write(new Date().getFullYear());
+				</script>
+				Vusi Mathonsi. All Rights Reserved
+			</small>
+		</footer>
+		<script>
+			const timelineItems = document.querySelectorAll(".timeline-item");
+
+			function updateActiveTimelineItem() {
+				// 1. Define the horizontal line (the exact middle of the screen)
+				const viewportCenter = window.innerHeight / 2;
+
+				let closestItem = null;
+				let minDistance = Infinity;
+
+				// 2. Loop through each item to find which one is closest to the center
+				timelineItems.forEach((item) => {
+					const rect = item.getBoundingClientRect();
+
+					// The dot is placed 24px from the top of the item and is 20px tall.
+					// So, the exact center of the dot is rect.top + 34px.
+					const dotCenterTarget = rect.top + 34;
+
+					// Calculate the absolute distance from the dot to the middle of the screen
+					const distance = Math.abs(viewportCenter - dotCenterTarget);
+
+					if (distance < minDistance) {
+						minDistance = distance;
+						closestItem = item;
+					}
+				});
+
+				// 3. Remove 'active' class from ALL items
+				timelineItems.forEach((item) => {
+					item.classList.remove("active");
+				});
+
+				// 4. Add 'active' class ONLY to the closest item
+				if (closestItem) {
+					closestItem.classList.add("active");
+				}
+			}
+
+			// Run the function every time the user scrolls
+			window.addEventListener("scroll", updateActiveTimelineItem);
+
+			// Run it once when the page loads so the first item lights up immediately
+			window.addEventListener("load", updateActiveTimelineItem);
+
+			// Recalculate if the user resizes their window
+			window.addEventListener("resize", updateActiveTimelineItem);
+		</script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
