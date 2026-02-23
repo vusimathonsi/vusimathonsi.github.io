@@ -88,53 +88,7 @@
 				Vusi Mathonsi. All Rights Reserved
 			</small>
 		</footer>
-		<script>
-			const timelineItems = document.querySelectorAll(".timeline-item");
-
-			function updateActiveTimelineItem() {
-				// 1. Define the horizontal line (the exact middle of the screen)
-				const viewportCenter = window.innerHeight / 2;
-
-				let closestItem = null;
-				let minDistance = Infinity;
-
-				// 2. Loop through each item to find which one is closest to the center
-				timelineItems.forEach((item) => {
-					const rect = item.getBoundingClientRect();
-
-					// The dot is placed 24px from the top of the item and is 20px tall.
-					// So, the exact center of the dot is rect.top + 34px.
-					const dotCenterTarget = rect.top + 34;
-
-					// Calculate the absolute distance from the dot to the middle of the screen
-					const distance = Math.abs(viewportCenter - dotCenterTarget);
-
-					if (distance < minDistance) {
-						minDistance = distance;
-						closestItem = item;
-					}
-				});
-
-				// 3. Remove 'active' class from ALL items
-				timelineItems.forEach((item) => {
-					item.classList.remove("active");
-				});
-
-				// 4. Add 'active' class ONLY to the closest item
-				if (closestItem) {
-					closestItem.classList.add("active");
-				}
-			}
-
-			// Run the function every time the user scrolls
-			window.addEventListener("scroll", updateActiveTimelineItem);
-
-			// Run it once when the page loads so the first item lights up immediately
-			window.addEventListener("load", updateActiveTimelineItem);
-
-			// Recalculate if the user resizes their window
-			window.addEventListener("resize", updateActiveTimelineItem);
-		</script>
+		
 		<script src="js/main.js"></script>
 	</body>
 </html>
