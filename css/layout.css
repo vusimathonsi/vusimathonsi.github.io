@@ -57,6 +57,10 @@ footer > #copy {
 	justify-content: center;
 	text-align: center;
 }
+#pillars,
+#connect {
+	padding-top: 5rem;
+}
 
 @media (max-width: 768px) {
 	.hamburger {
