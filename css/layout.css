@@ -62,6 +62,17 @@ footer > #copy {
 	padding-top: 5rem;
 }
 
+/*
+========================================
+MISCELLANEOUS
+========================================
+*/
+.pill-container {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 0.5rem;
+}
+
 @media (max-width: 768px) {
 	.hamburger {
 		display: block;
