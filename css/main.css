@@ -100,7 +100,7 @@ footer ul {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	.card:not(#pillars .card) {
+	[data-page="home"] .card {
 		max-width: 20rem;
 	}
 }
