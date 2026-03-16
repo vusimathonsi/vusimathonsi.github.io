@@ -67,10 +67,26 @@ footer > #copy {
 MISCELLANEOUS
 ========================================
 */
-.pill-container {
+.card-container,
+.pill-container,
+.card-secondary-buttons,
+.card-buttons {
 	display: flex;
+}
+.pill-container {
 	flex-flow: row wrap;
 	gap: 0.5rem;
+}
+.card-container {
+	flex-direction: column;
+	gap: 1rem;
+}
+.card-buttons {
+	justify-content: space-between;
+}
+
+.card-secondary-buttons {
+	gap: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -110,6 +126,9 @@ MISCELLANEOUS
 	#pillars > div {
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
+	}
+	.card-container {
+		flex-direction: row;
 	}
 }
 
